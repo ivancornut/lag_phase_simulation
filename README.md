@@ -1,0 +1,1 @@
+This is a contact process simulation of the lag phase in bacterial cultures
