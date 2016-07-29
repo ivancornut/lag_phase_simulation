@@ -55,6 +55,7 @@ long * update_landscape(long *landscape, long x_size, long y_size, double wake_u
 	{
 		position = (long) floor(genrand64_real3()*(x_size*y_size));
 		printf("%ld \n",position);
+		printf("i : %ld\n",i );
 		printf("Youhou\n");
 
 		switch(landscape[position])
@@ -145,6 +146,7 @@ long * update_landscape(long *landscape, long x_size, long y_size, double wake_u
 		}
 
 	}
+return landscape;
 
 }
 
@@ -168,14 +170,14 @@ long * initialize_landscape(long *landscape, long x_size, long y_size, double oc
 int run_simulation(long x_size, long y_size, int iterations, double wake_up_rate, double division_rate, double death_rate, double occupancy)
 {
 	
-	long *landscape = (long*) malloc(x_size * y_size * sizeof(long));
+	long *landscape = (long*)malloc(x_size * y_size * sizeof(long));
 //	long *stor_of_sites = (long*) malloc(3 * sizeof(long));
 	
 	landscape = initialize_landscape(landscape, x_size, y_size, occupancy);
 	
 //	ini_dat_file();
 
-	for(long i = 0; i < iterations; i++)
+	for(long u = 0; u < iterations; u++)
 	{
 		landscape = update_landscape(landscape, x_size, y_size, wake_up_rate, division_rate, death_rate);
 //		stor_of_sites = do_what_ever_funtion();
